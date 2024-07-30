@@ -9,7 +9,11 @@ export class DiscordService {
   async notify(message: string){
     const body = {
       content: message,
-
+      embeds: [
+        {
+          image: {url: 'https://media1.giphy.com/media/pynZagVcYxVUk/giphy.webp?cid=790b7611omug6blxwsrhdsnf0t1qji0n8aeqznu3ouh29zib&ep=v1_gifs_trending&rid=giphy.webp&ct=g'}
+        }
+      ]
     };
     const response = await fetch(this.discordWebhookUrl,{
       method: 'POST',
